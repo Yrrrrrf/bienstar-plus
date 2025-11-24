@@ -1,41 +1,56 @@
-# sv
+# Bienestar+ 🏥
 
-Everything you need to build a Svelte project, powered by
-[`sv`](https://github.com/sveltejs/cli).
+**Sistema de Telemedicina y Monitoreo IoT Preventivo**
 
-## Creating a project
+Bienestar+ es un ecosistema de salud digital diseñado para transformar el cuidado de enfermedades crónicas de un modelo reactivo a uno **proactivo y preventivo**. Utilizando dispositivos wearables comerciales (smartwatches) y una plataforma en la nube, permitimos el monitoreo continuo de signos vitales para la detección temprana de anomalías.
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Objetivo
 
-# create a new project in my-app
-npx sv create my-app
-```
+Empoderar al paciente y facilitar la intervención médica temprana. El sistema busca reducir hospitalizaciones y riesgos fatales (como caídas o arritmias) mediante el análisis de datos 24/7, sin la necesidad de hardware médico costoso y especializado.
 
-## Developing
+## FUnciones Principales
 
-Once you've created a project and installed dependencies with `npm install` (or
-`pnpm install` or `yarn`), start a development server:
+*   **Monitoreo 24/7:** Seguimiento continuo de ritmo cardíaco, SpO2 y temperatura corporal mediante wearables de consumo (vía Bluetooth).
+*   **Detección de Anomalías:** Algoritmos en la nube que identifican patrones irregulares (arritmias, fiebre, caídas).
+*   **Alertas Inmediatas:** Notificaciones automáticas al Portal Médico y familiares en caso de emergencia (< 60 segundos).
+*   **Accesibilidad:** Diseñado para funcionar con hardware comercial para reducir costos de entrada.
+*   **Soporte Multi-idioma:** Interfaz internacionalizada (Español, Inglés, Alemán) usando *Inlang Paraglide*.
 
-```sh
-npm run dev
+## Stack (tecnología utilizada)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Este repositorio contiene el frontend y la lógica de presentación del sistema:
 
-## Building
+*   **Framework:** [SvelteKit](https://kit.svelte.dev/) (Svelte 5)
+*   **Estilos:** [TailwindCSS v4](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
+*   **Lenguaje:** TypeScript
+*   **Internacionalización (i18n):** [Inlang Paraglide JS](https://inlang.com/)
+*   **Empaquetador:** Vite
 
-To create a production version of your app:
+## Instalación y Ejecución
 
-```sh
-npm run build
-```
+Para ejecutar el proyecto localmente:
 
-You can preview the production build with `npm run preview`.
+1.  **Instalar dependencias:**
+    ```sh
+    deno install
+    ```
 
-> To deploy your app, you may need to install an
-> [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+2.  **Iniciar servidor de desarrollo:**
+    ```sh
+    deno run --allow-net --allow-read server.ts
+
+3.  **Iniciar la aplicación SvelteKit:**
+    ```sh
+    # o abrir automáticamente en el navegador
+    deno task dev --open
+    ```
+
+## ⚠️ Aviso Importante
+
+**EL SISTEMA ES ÚNICAMENTE DE MONITOREO.**
+Bienestar+ es una herramienta de apoyo tecnológico. No somos médicos ni sustituimos el diagnóstico clínico profesional. Los datos recolectados sirven para alertar y prevenir, pero cualquier decisión médica debe ser tomada por profesionales de la salud.
+
+---
+*Facultad de Ingeniería de UAEM - Proyecto IoT Bienestar+*

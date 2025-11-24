@@ -1,4 +1,12 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from es!"
+  "dashboard_title": "Dashboard de Salud",
+  "patient_status": "Estado del Paciente",
+  "heart_rate": "Ritmo Cardíaco",
+  "temperature": "Temperatura",
+  "oxygenation": "Oxigenación",
+  "critical_alert": "¡ALERTA CRÍTICA!",
+  "stable_signs": "Signos estables",
+  "simulate_emergency": "Simular Emergencia",
+  "stop_monitoring": "Detener Monitoreo"
 }

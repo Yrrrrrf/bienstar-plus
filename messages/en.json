@@ -1,4 +1,12 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from en!"
+  "dashboard_title": "Health Dashboard",
+  "patient_status": "Patient Status",
+  "heart_rate": "Heart Rate",
+  "temperature": "Temperature",
+  "oxygenation": "Oxygenation",
+  "critical_alert": "CRITICAL ALERT!",
+  "stable_signs": "Vitals Stable",
+  "simulate_emergency": "Simulate Emergency",
+  "stop_monitoring": "Stop Monitoring"
 }
