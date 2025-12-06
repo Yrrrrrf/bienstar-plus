@@ -8,5 +8,19 @@
   "critical_alert": "¡ALERTA CRÍTICA!",
   "stable_signs": "Signos estables",
   "simulate_emergency": "Simular Emergencia",
-  "stop_monitoring": "Detener Monitoreo"
+  "stop_monitoring": "Detener Monitoreo",
+  "medic_view": "Vista Médica",
+  "patient_history": "Historial del Paciente",
+  "export_csv": "Exportar CSV",
+  "alert_timeline": "Línea de Tiempo de Alertas",
+  "no_alerts": "Sin alertas registradas. Paciente estable.",
+  "recent_readings": "Lecturas Recientes (Últimas 50)",
+  "time": "Hora",
+  "hr_short": "RC",
+  "hr_with_unit": "RC (bpm)",
+  "spo2_with_unit": "SpO2 (%)",
+  "temp_short": "T",
+  "temp_with_unit": "Temp (°C)",
+  "status": "Estado",
+  "no_data": "Sin datos disponibles"
 }

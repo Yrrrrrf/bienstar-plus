@@ -8,5 +8,19 @@
   "critical_alert": "KRITISCHER ALARM!",
   "stable_signs": "Vitalwerte stabil",
   "simulate_emergency": "Notfall simulieren",
-  "stop_monitoring": "Überwachung stoppen"
+  "stop_monitoring": "Überwachung stoppen",
+  "medic_view": "Arztansicht",
+  "patient_history": "Patientenakte",
+  "export_csv": "CSV exportieren",
+  "alert_timeline": "Alarm-Zeitlinie",
+  "no_alerts": "Keine Alarme. Patient stabil.",
+  "recent_readings": "Aktuelle Messwerte (Letzte 50)",
+  "time": "Zeit",
+  "hr_short": "HF",
+  "hr_with_unit": "HF (bpm)",
+  "spo2_with_unit": "SpO2 (%)",
+  "temp_short": "T",
+  "temp_with_unit": "Temp (°C)",
+  "status": "Status",
+  "no_data": "Keine Daten verfügbar"
 }

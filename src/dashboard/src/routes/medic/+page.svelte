@@ -1,6 +1,7 @@
 <script lang="ts">
     import { vitalsStore } from '$lib/stores/vitals.svelte';
     import type { ApiReading } from '$lib/types';
+    import * as m from '$lib/paraglide/messages';
 
     // Sort history by timestamp descending (newest first)
     let sortedHistory = $derived([...vitalsStore.history].sort((a, b) => 
@@ -47,22 +48,22 @@
 
 <div class="container mx-auto p-4">
     <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold">Medic View - Patient History</h1>
+        <h1 class="text-2xl font-bold">{m.medic_view()} - {m.patient_history()}</h1>
         <button class="btn btn-primary btn-sm" onclick={exportCSV}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Export CSV
+            {m.export_csv()}
         </button>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Timeline Column -->
         <div class="md:col-span-1">
-            <h2 class="text-xl font-semibold mb-4">Alert Timeline</h2>
+            <h2 class="text-xl font-semibold mb-4">{m.alert_timeline()}</h2>
             {#if alerts.length === 0}
                 <div class="alert alert-success">
-                    <span>No alerts recorded. Patient stable.</span>
+                    <span>{m.no_alerts()}</span>
                 </div>
             {:else}
                 <ul class="steps steps-vertical w-full">
@@ -71,7 +72,7 @@
                             <div class="text-left w-full pl-2">
                                 <div class="font-bold text-sm">{formatTime(alert.timestamp)}</div>
                                 <div class="text-xs opacity-70">
-                                    HR: {alert.hr} | SpO2: {alert.spo2}% | T: {alert.temp}°C
+                                    {m.hr_short()}: {alert.hr} | SpO2: {alert.spo2}% | {m.temp_short()}: {alert.temp}°C
                                 </div>
                                 <div class="badge badge-sm mt-1" class:badge-error={alert.status === 'critical'} class:badge-warning={alert.status === 'warning'}>
                                     {alert.status.toUpperCase()}
@@ -85,16 +86,16 @@
 
         <!-- Data Table Column -->
         <div class="md:col-span-2">
-            <h2 class="text-xl font-semibold mb-4">Recent Readings (Last 50)</h2>
+            <h2 class="text-xl font-semibold mb-4">{m.recent_readings()}</h2>
             <div class="overflow-x-auto bg-base-100 rounded-box shadow">
                 <table class="table table-xs table-zebra">
                     <thead>
                         <tr>
-                            <th>Time</th>
-                            <th>HR (bpm)</th>
-                            <th>SpO2 (%)</th>
-                            <th>Temp (°C)</th>
-                            <th>Status</th>
+                            <th>{m.time()}</th>
+                            <th>{m.hr_with_unit()}</th>
+                            <th>{m.spo2_with_unit()}</th>
+                            <th>{m.temp_with_unit()}</th>
+                            <th>{m.status()}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,7 +117,7 @@
                         {/each}
                         {#if sortedHistory.length === 0}
                             <tr>
-                                <td colspan="5" class="text-center py-4">No data available</td>
+                                <td colspan="5" class="text-center py-4">{m.no_data()}</td>
                             </tr>
                         {/if}
                     </tbody>
