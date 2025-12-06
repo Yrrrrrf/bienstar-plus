@@ -31,7 +31,7 @@ class VitalsStore {
             if (!response.ok) throw new Error('Fetch failed');
             
             const data: ApiResponse = await response.json();
-            this.updateVitals(data.current);
+            this.updateVitals(data.current, data.history);
             this.history = data.history;
             
             this.connectionStatus = 'connected';
@@ -47,18 +47,22 @@ class VitalsStore {
         }
     }
 
-    private updateVitals(reading: ApiReading) {
+    private updateVitals(reading: ApiReading, history: ApiReading[]) {
         // Map API reading to VitalSign objects
         this.vitals = this.vitals.map(v => {
             let newValue = v.value;
             let newStatus = v.status;
+            let vitalHistory: number[] = [];
 
             if (v.id === 'hr') {
                 newValue = reading.hr;
+                vitalHistory = history.map(h => h.hr);
             } else if (v.id === 'spo2') {
                 newValue = reading.spo2;
+                vitalHistory = history.map(h => h.spo2);
             } else if (v.id === 'temp') {
                 newValue = reading.temp;
+                vitalHistory = history.map(h => h.temp);
             }
 
             // Determine status locally
@@ -67,7 +71,7 @@ class VitalsStore {
             else if (newValue < v.min || newValue > v.max) newStatus = 'warning';
             else newStatus = 'normal';
 
-            return { ...v, value: newValue, status: newStatus as any };
+            return { ...v, value: newValue, status: newStatus as any, history: vitalHistory };
         });
     }
 

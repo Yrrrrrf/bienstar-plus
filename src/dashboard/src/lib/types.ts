@@ -6,6 +6,7 @@ export interface VitalSign {
   status: 'normal' | 'warning' | 'critical';
   min: number;
   max: number;
+  history?: number[];
 }
 
 export interface ApiReading {
