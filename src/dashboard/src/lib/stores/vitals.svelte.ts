@@ -1,12 +1,4 @@
-import { type VitalSign } from '$lib/types';
-
-interface ApiReading {
-    hr: number;
-    spo2: number;
-    temp: number;
-    status: string;
-    timestamp: string;
-}
+import { type VitalSign, type ApiReading } from '$lib/types';
 
 interface ApiResponse {
     current: ApiReading;
@@ -20,6 +12,8 @@ class VitalsStore {
         { id: 'spo2', name: 'Oxigenación', value: 0, unit: '%', status: 'normal', min: 95, max: 100 },
         { id: 'temp', name: 'Temperatura', value: 0, unit: '°C', status: 'normal', min: 36, max: 37.5 }
     ]);
+    
+    history = $state<ApiReading[]>([]);
 
     connectionStatus = $state<'connected' | 'disconnected'>('disconnected');
     lastUpdated = $state<string | null>(null);
@@ -38,6 +32,7 @@ class VitalsStore {
             
             const data: ApiResponse = await response.json();
             this.updateVitals(data.current);
+            this.history = data.history;
             
             this.connectionStatus = 'connected';
             this.failCount = 0;

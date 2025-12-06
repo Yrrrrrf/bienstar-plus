@@ -7,3 +7,11 @@ export interface VitalSign {
   min: number;
   max: number;
 }
+
+export interface ApiReading {
+    hr: number;
+    spo2: number;
+    temp: number;
+    status: string;
+    timestamp: string;
+}
