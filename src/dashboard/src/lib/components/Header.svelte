@@ -1,8 +1,7 @@
 <script lang="ts">
     import { getLocale, setLocale, locales } from '$lib/paraglide/runtime';
-    // Importamos el tipo para complacer a TypeScript si es necesario, 
-    // o simplemente usamos un cast en la función.
     import { onMount } from 'svelte';
+    import * as m from '$lib/paraglide/messages';
 
     let theme = $state('light');
 
@@ -43,7 +42,7 @@
                 {getLocale().toUpperCase()}
                 <svg width="12px" height="12px" class="h-2 w-2 fill-current opacity-60 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048"><path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path></svg>
             </div>
-            <ul tabindex="0" class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-32">
+            <ul class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-32">
                 {#each locales as lang}
                     <li>
                         <button onclick={() => switchLanguage(lang)} class="btn btn-sm btn-ghost justify-start">

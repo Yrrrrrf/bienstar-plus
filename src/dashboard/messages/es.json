@@ -22,5 +22,6 @@
   "temp_short": "T",
   "temp_with_unit": "Temp (°C)",
   "status": "Estado",
-  "no_data": "Sin datos disponibles"
+  "no_data": "Sin datos disponibles",
+  "simulate_beat": "Simular Latido"
 }

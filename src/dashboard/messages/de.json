@@ -22,5 +22,6 @@
   "temp_short": "T",
   "temp_with_unit": "Temp (°C)",
   "status": "Status",
-  "no_data": "Keine Daten verfügbar"
+  "no_data": "Keine Daten verfügbar",
+  "simulate_beat": "Schlag simulieren"
 }
