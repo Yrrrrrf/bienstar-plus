@@ -61,6 +61,16 @@ Para ejecutar el proyecto localmente:
    deno task dev --open
    ```
 
+## Vistas de la Aplicación
+
+## Vista de Paciente
+
+![Patient View](./resources/img/patient.png)
+
+## Vista de Médico
+
+![Medic View](./resources/img/medic.png)
+
 ## ⚠️ Aviso Importante
 
 **EL SISTEMA ES ÚNICAMENTE DE MONITOREO.** Bienestar+ es una herramienta de
